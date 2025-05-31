@@ -1,0 +1,1 @@
+innerHTMl or innerText (topic 1) document.write(topic 2) window.alert(Topic 3) console.log(Topic 4)
