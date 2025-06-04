@@ -1,0 +1,35 @@
+Try and catch --> main target //c++ for
+
+Error Handling
+
+1.Compile time error
+
+2.Runtime time error
+
+Division by Zero Handling javascript Copy Edit function divideNumbers(a, b) { try { if (b === 0) { throw new Error("Cannot divide by zero!"); } console.log("Result:", a / b); } catch (error) { console.log("Error:", error.message); } }
+// Test cases divideNumbers(10, 2); // Outputs: Result: 5 divideNumbers(10, 0); // Outputs: Error: Cannot divide by zero!
+
+Handling Invalid Number Conversion javascript Copy Edit function convertToNumber(input) { try { let number = Number(input); if (isNaN(number)) { throw new Error("Invalid number input!"); } console.log("Converted number:", number); } catch (error) { console.log("Error:", error.message); } }
+// Test cases convertToNumber("42"); // Outputs: Converted number: 42 convertToNumber("hello"); // Outputs: Error: Invalid number input!
+
+Handling File Read Errors (Node.js) (This solution works in a Node.js environment)
+javascript Copy Edit const fs = require("fs");
+
+function readFileContent(filename) { try { let data = fs.readFileSync(filename, "utf-8"); console.log("File content:", data); } catch (error) { console.log("Error: Unable to read the file!"); } }
+
+// Test case (ensure "data.txt" exists or not) readFileContent("data.txt"); Expected Behavior:
+
+If data.txt exists, it logs the file content.
+
+If data.txt does not exist, it logs "Error: Unable to read the file!".
+
+Handling Null or Undefined Objects javascript Copy Edit function getUserName(user) { try { if (!user || typeof user.name === "undefined") { throw new Error("Error: Invalid user object!"); } console.log("User name:", user.name); } catch (error) { console.log(error.message); } }
+// Test cases getUserName({ name: "Alice" }); // Outputs: User name: Alice getUserName(null); // Outputs: Error: Invalid user object! getUserName({}); // Outputs: Error: Invalid user object! 5. Accessing Array Elements Safely javascript Copy Edit function getArrayElement(arr, index) { try { if (!Array.isArray(arr) || arr.length === 0 || index < 0 || index >= arr.length) { throw new Error("Error: Invalid array or index out of range!"); } console.log("Element at index", index, ":", arr[index]); } catch (error) { console.log(error.message); } }
+
+// Test cases getArrayElement([10, 20, 30], 1); // Outputs: Element at index 1: 20 getArrayElement([10, 20, 30], 5); // Outputs: Error: Invalid array or index out of range! getArrayElement(null, 1); // Outputs: Error: Invalid array or index out of range! getArrayElement([], 0); // Outputs: Error: Invalid array or index out of range! Summary These solutions ensure proper error handling in different scenarios using try and catch. Each function:
+
+Checks for invalid input.
+
+Throws an error message when needed.
+
+Uses catch to prevent the program from crashing.
