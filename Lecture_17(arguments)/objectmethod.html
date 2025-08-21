@@ -1,0 +1,39 @@
+<!-- 
+Object methods are actions that can be performed on objects.
+
+A method is a function definition stored as a property value.
+JavaScript mein object ek aisa container hota hai jisme hum key-value pairs store karte hain. Ye ek tarah ka data structure hai jisme hum related information ko ek jagah rakh sakte hain.
+Socho tumhare paas ek car hai, uski details — jaise brand, model, year — sab ek object ke andar store ki ja sakti hain.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <h1>Javascript Objects</h1>
+  <h2>Object Methods</h2>
+  <title>A method is a function definition stored as a property value</title>
+
+  <p id="demo"></p>
+</head>
+<body>
+  <script>
+    const person ={
+      firstname: "John",
+      lastname: "Doe",
+      id:5566,
+      fullName:function(){
+        return this.firstname + " " + this.lastname;
+      }
+    };
+//     // 🔁 return kya hota hai JavaScript mein? (Hinglish Explanation)
+// JavaScript mein return ka use function ke andar hota hai — jab tum chahte ho ki function kuch value wapas (return) kare jab wo execute ho.
+// Socho tum ek function likhte ho jo do numbers ka sum karta hai. Tum chahoge ki wo result tumhe wapas de — tab return ka use hota hai.
+
+
+    document.getElementById("demo").innerHTML = person.fullName();
+  </script>
+  
+</body>
+</html>
