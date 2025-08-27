@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Return Name Using this</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color:rgb(212, 182, 203); 
+    }
+    h2 {
+      color: #333;
+    }
+    input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      outline: none;
+    }
+    input:focus {
+      border-color: #4CAF50;
+    }
+    button {
+      padding: 8px 15px;
+      margin-left: 5px;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #4CAF50;
+    }
+  </style>
+</head>
+<body>
+
+ <body>
+
+  <h2>Enter Your Details</h2>
+  <input type="text" id="nameInput" placeholder="Type your name here..." />
+  <input type="email" id="emailInput" placeholder="Type your email here..." />
+  <button onclick="showDetails()">Submit</button>
+
+  <div id="result"></div>
+
+  <script>
+    // Constructor function
+    function User(name, email) {
+      this.name = name;
+      this.email = email;
+
+      this.getName = function() {
+        return this.name;
+      };
+      this.getEmail = function() {
+        return this.email;
+      };
+    }
+
+    // Function to handle button click
+    function showDetails() {
+      const name = document.getElementById("nameInput").value;
+      const email = document.getElementById("emailInput").value;
+
+      // Create object using constructor
+      const user = new User(name, email);
+
+      // Show result
+      document.getElementById("result").innerText = 
+        "Hello, " + user.getName() + " 👋\nYour Email: " + user.getEmail();
+    }
+  </script>
+
+</body>
+</html>
